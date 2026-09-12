@@ -29,3 +29,12 @@ test('濃食鹽水兩類細胞均出水較多，六組觀察才完成，舊分�
  for(const c of [0,1]){assert.equal(cellResult(c,2).water,'出水較多');s.sims[5].observations[c+'-2']={condition:'濃食鹽水',prediction:'出水較多',result:cellResult(c,2).shape};}
  assert.match(cellResult(1,2).shape,/質壁分離/);assert.deepEqual(missingTasks(s,5),[]);
 });
+
+test('重新載入建立全新學習狀態，不延續答案、分數、身分或密碼解鎖',async()=>{
+ const {canVisitPage}=await import('../lib/model.ts');
+ const old=freshState();old.manualUnlocked=true;old.completed=[0,1,2,3,4,5,6];old.answers.Q01=answer(formative[0]);old.student={className:'測試',seat:'1',name:'測試'};old.page=6;
+ const next=freshState();assert.equal(next.page,0);assert.equal(next.tab,'read');assert.deepEqual(next.answers,{});assert.deepEqual(next.sims,{});assert.equal(next.student,undefined);assert.equal(progressPoints(next),0);
+ for(let i=1;i<7;i++)assert.equal(canVisitPage(next,i),false);assert.ok(canVisitPage(next,0));assert.ok(canVisitPage(next,7));
+ const source=readFileSync(new URL('../app/page.tsx',import.meta.url),'utf8');
+ assert.doesNotMatch(source,/localStorage\.(getItem|setItem)|sessionStorage/);assert.match(source,/localStorage\.removeItem\(KEY\)/);
+});
