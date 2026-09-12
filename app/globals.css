@@ -25,3 +25,24 @@
 
 .more-reading.relationship-rows .concept-blocks{grid-template-columns:minmax(0,1fr)}
 .current-conditions{padding:14px;border:2px solid #8cb8bf;border-radius:12px;background:#eff9f7;margin-bottom:14px}.current-conditions p{margin:8px 0 0}.current-conditions .controls{margin-top:10px}
+
+/* Reading content takes priority over display headings. */
+.reading h2{font-size:21px;line-height:1.5;margin-bottom:16px}
+.reading .section-label{font-size:18px;font-weight:700}
+.reading .concept-blocks{gap:16px;margin:18px 0}
+.reading .concept-blocks li{font-size:21px;line-height:1.85;padding:18px 22px;color:#243e53;overflow-wrap:anywhere}
+.reading .concept-blocks strong{font-weight:800;color:#075b69}
+.more-reading .concept-blocks{grid-template-columns:minmax(0,1fr)}
+.cell-records{margin-top:28px}.cell-records h3{font-size:21px;margin-bottom:8px}
+.cell-record-matrix{table-layout:fixed;width:100%;min-width:650px;border-collapse:separate;border-spacing:0;border:1px solid #9ccdbc;border-radius:12px;overflow:hidden}
+.cell-record-matrix th,.cell-record-matrix td{padding:18px 14px;border-right:1px solid #bdddd2;border-bottom:1px solid #bdddd2;vertical-align:top;text-align:left;font-size:18px;line-height:1.7;overflow-wrap:anywhere}
+.cell-record-matrix thead th{background:#e5f5ef;color:#17624e;text-align:center;font-size:20px}
+.cell-record-matrix th:first-child{width:120px}
+.cell-record-matrix tbody th{background:#eff8f4;color:#17624e}
+.cell-record-matrix td{background:#fff}.cell-record-matrix tr>:last-child{border-right:0}.cell-record-matrix tbody tr:last-child>*{border-bottom:0}
+.cell-record-matrix .record-result{display:block;font-size:20px;color:#164f43}
+.cell-record-matrix .record-water{margin:10px 0;font-weight:700;color:#235fb8}
+.record-prediction{border-top:1px dashed #b7cec5;padding-top:10px;margin-top:14px}
+.record-prediction>span{font-weight:700;color:#526575}.record-prediction p{margin:4px 0 0}
+.record-empty{display:block;min-height:100px;color:#657b74;text-align:center;padding-top:20px}
+@media(max-width:700px){.reading .concept-blocks li{padding:16px;font-size:21px}.cell-record-matrix th:first-child{width:100px}}
