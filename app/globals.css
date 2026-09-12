@@ -46,3 +46,8 @@
 .record-prediction>span{font-weight:700;color:#526575}.record-prediction p{margin:4px 0 0}
 .record-empty{display:block;min-height:100px;color:#657b74;text-align:center;padding-top:20px}
 @media(max-width:700px){.reading .concept-blocks li{padding:16px;font-size:21px}.cell-record-matrix th:first-child{width:100px}}
+
+.cell-animation{padding:0 14px 14px}
+.cell-animation-image{display:block;width:100%;height:auto;max-height:min(60dvh,560px);object-fit:contain;margin:0 auto}
+.cell-animation .controls{justify-content:center;margin-top:12px}
+.zoom-dialog .cell-animation-image{max-height:65dvh}
